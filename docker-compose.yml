@@ -9,6 +9,8 @@ services:
       - "8000:8000"
     volumes:
       - .:/var/www/html
+      - dbdata:/var/lib/mysql
+
     networks:
       - app-network
     depends_on:
@@ -19,9 +21,8 @@ services:
     container_name: mysql-container
     environment:
       MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_USER: root
-      MYSQL_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
     volumes:
       - dbdata:/var/lib/mysql
     networks:
