@@ -13,6 +13,7 @@ class PostController extends Controller
     {
         try {
             $posts = Post::all();
+            
         } catch (Exception $e) {
             return response()->json([
                 'data' => [],

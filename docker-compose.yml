@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
   laravel-app:
     build:
       context: .
     container_name: laravel-api-container
     ports:
-      - "8000:8000"
+      - "8080:80"
     volumes:
       - .:/var/www/html
       - dbdata:/var/lib/mysql
